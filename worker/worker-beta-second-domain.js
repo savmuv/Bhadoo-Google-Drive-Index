@@ -55,8 +55,8 @@ const authConfig = {
 ╚═════╝░╚══════╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░░*/
 
 const uiConfig = {
-    "version": "2.0.21", // don't touch this one. get latest code using generator at https://bdi-generator.hashhackers.com
-    "jsdelivr_cdn_src": "https://cdn.jsdelivr.net/npm/@googledrive/index", // If Project is Forked, then enter your GitHub repo
+    "version": "2.0.22", // don't touch this one. get latest code using generator at https://bdi-generator.hashhackers.com
+    "jsdelivr_cdn_src": "https://cdn.jsdelivr.net/gh/OneFusionPlus", // If Project is Forked, then enter your GitHub repo
 };
 
 // DON'T TOUCH BELOW THIS UNLESS YOU KNOW WHAT YOU'RE DOING
