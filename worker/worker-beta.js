@@ -5,7 +5,7 @@
     ╚██████╔╝██████╔╝██║██╗╚█████╔╝██████╔╝██╗╚█████╔╝██║░░██║╚██████╔╝
     ░╚═════╝░╚═════╝░╚═╝╚═╝░╚════╝░╚═════╝░╚═╝░╚════╝░╚═╝░░╚═╝░╚═════╝░
                              v 2.0.22
-A Script Redesigned by Parveen Bhadoo from GOIndex at https://www.npmjs.com/package/@googledrive/index */
+A Script Redesigned by Parveen Bhadoo from GOIndex at https://github.com/OneFusionPlus/Google-Drive-Index */
 
 // add multiple serviceaccounts as {}, {}, {}, random account will be selected by each time app is opened.
 const serviceaccounts = [
@@ -99,7 +99,7 @@ const uiConfig = {
     "downloaddomain": domain_for_dl, // Ignore this and set domains at top of this page after service accounts.
     "poster": "https://cdn.jsdelivr.net/gh/OneFusionPlus/Google-Drive-Index@2.0.22/images/poster.jpg", // Video poster URL or see Readme to how to load from Drive
     "audioposter": "https://cdn.jsdelivr.net/gh/OneFusionPlus/Google-Drive-Index@2.0.22/images/music.jpg", // Video poster URL or see Readme to how to load from Drive
-    "jsdelivr_cdn_src": "https://cdn.jsdelivr.net/gh/OneFusionPlus", // If Project is Forked, then enter your GitHub repo
+    "jsdelivr_cdn_src": "https://cdn.jsdelivr.net/gh/OneFusionPlus/Google-Drive-Index", // If Project is Forked, then enter your GitHub repo
     "render_head_md": true, // Render Head.md
     "render_readme_md": true, // Render Readme.md
     "display_drive_link": false, // This will add a Link Button to Google Drive of that particular file.
@@ -310,7 +310,7 @@ async function handleRequest(request) {
     if (path.toLowerCase() == '/arc-sw.js') {
         return fetch("https://arc.io/arc-sw.js")
     } else if (path.toLowerCase() == '/admin') {
-        return Response.redirect("https://www.npmjs.com/package/@googledrive/index", 301)
+        return Response.redirect("https://github.com/OneFusionPlus/Google-Drive-Index", 301)
     } else if (blocked_region.includes(region)) {
         return new Response(region_blocked, {
             status: 403,
