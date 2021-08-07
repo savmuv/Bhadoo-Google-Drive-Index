@@ -5,7 +5,7 @@
     ╚██████╔╝██████╔╝██║██╗╚█████╔╝██████╔╝██╗╚█████╔╝██║░░██║╚██████╔╝
     ░╚═════╝░╚═════╝░╚═╝╚═╝░╚════╝░╚═════╝░╚═╝░╚════╝░╚═╝░░╚═╝░╚═════╝░
                              v 2.0.21
-A Script Redesigned by Parveen Bhadoo from GOIndex at https://www.npmjs.com/package/@googledrive/index */
+A Script Redesigned by Parveen Bhadoo from GOIndex */
 
 // add multiple serviceaccounts as {}, {}, {}, random account will be selected by each time app is opened.
 const serviceaccounts = [
@@ -13,8 +13,9 @@ const serviceaccounts = [
 ];
 const randomserviceaccount = serviceaccounts[Math.floor(Math.random()*serviceaccounts.length)];
 const blocked_region = ['']; // add regional codes seperated by comma, eg. ['IN', 'US', 'PK']
+const blocked_asn = []; // add ASN numbers from http://www.bgplookingglass.com/list-of-autonomous-system-numbers, eg. [16509, 12345]
 const authConfig = {
-    "siteName": "Bhadoo Drive Index", // Website name
+    "siteName": "Drive Index", // Website name
     "client_id": "746239575955-oao9hkv614p8glrqpvuh5i8mqfoq145b.apps.googleusercontent.com", // Client id from Google Cloud Console
     "client_secret": "u5a1CSY5pNjdD2tGTU93TTnI", // Client Secret from Google Cloud Console
     "refresh_token": "", // Authorize token
@@ -55,8 +56,8 @@ const authConfig = {
 ╚═════╝░╚══════╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝░░*/
 
 const uiConfig = {
-    "version": "2.0.22", // don't touch this one. get latest code using generator at https://bdi-generator.hashhackers.com
-    "jsdelivr_cdn_src": "https://cdn.jsdelivr.net/gh/OneFusionPlus", // If Project is Forked, then enter your GitHub repo
+    "version": "2.0.21", // don't touch this one.
+    "jsdelivr_cdn_src": "https://cdn.jsdelivr.net/gh/OneFusionPlus/Google-Drive-Index", // If Project is Forked, then enter your GitHub repo
 };
 
 // DON'T TOUCH BELOW THIS UNLESS YOU KNOW WHAT YOU'RE DOING
@@ -118,6 +119,50 @@ const not_found = `
 "The requested URL <code>" + window.location.pathname + "</code> was not found on this server.  <ins>That’s all we know.</ins>";
   </script>
 `
+
+const asn_blocked = `<html>
+<head>
+<title>Access Denied</title>
+<link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<style>
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    color:#b0bec5;
+    display:table;
+    font-weight:100;
+    font-family:Lato
+}
+.container{
+    text-align:center;
+    display:table-cell;
+    vertical-align:middle
+}
+.content{
+    text-align:center;
+    display:inline-block
+}
+.message{
+    font-size:80px;
+    margin-bottom:40px
+}
+a{
+    text-decoration:none;
+    color:#3498db
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="content">
+<div class="message">Access Denied</div>
+</div>
+</div>
+</body>
+</html>`
 
 const SearchFunction = {
     formatSearchKeyword: function(keyword) {
@@ -208,6 +253,7 @@ addEventListener('fetch', event => {
 
 async function handleRequest(request) {
     const region = request.headers.get('cf-ipcountry').toUpperCase();
+    const asn_servers = request.cf.asn;
     if (gds.length === 0) {
         for (let i = 0; i < authConfig.roots.length; i++) {
             const gd = new googleDrive(authConfig, i);
@@ -242,7 +288,19 @@ async function handleRequest(request) {
     } else if (path.toLowerCase() == '/admin') {
         return Response.redirect("https://www.npmjs.com/package/@googledrive/index", 301)
     } else if (blocked_region.includes(region)) {
-        return fetch("https://blockedinyourcountry.netlify.app")
+        return new Response(asn_blocked, {
+                headers: {
+                    'content-type': 'text/html;charset=UTF-8'
+                },
+                status: 401
+            });
+    } else if (blocked_asn.includes(asn_servers)) {
+        return new Response(asn_blocked, {
+                headers: {
+                    'content-type': 'text/html;charset=UTF-8'
+                },
+                status: 401
+            });
     }
 
     const command_reg = /^\/(?<num>\d+):(?<command>[a-zA-Z0-9]+)(\/.*)?$/g;
