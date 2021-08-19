@@ -21,7 +21,7 @@
 
 ## How to
 
-* Stable Release `2.0.21`
+* Stable Release `2.0.22`
 * Beta Version (Latest) - [dl.connectvip](https://dl.connectvip.workers.dev) (For Dark Theme use darkly)
 * If you want to deploy main drive leave the option ROOT as it is.
 * If you want to deploy your Team Drive/Shared Drive/Folder then copy the ID and replace it with ROOT.
@@ -117,7 +117,7 @@
 ````
 const uiConfig = {
   "theme": "slate", // switch between themes, default set to vapor, select from https://www.npmjs.com/package/@googledrive/index
-  "version": "2.0.20", // don't touch this one. get latest code using generator at https://bdi-generator.hashhackers.com
+  "version": "2.0.22", // don't touch this one. get latest code using generator at https://bdi-generator.hashhackers.com
   // If you're using Image then set to true, If you want text then set it to false
   "logo_image": true, // true if you're using image link in next option.
   "logo_height": "", // only if logo_image is true
