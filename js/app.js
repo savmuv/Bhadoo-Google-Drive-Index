@@ -1,5 +1,5 @@
 // Redesigned by telegram.dog/TheFirstSpeedster at https://www.npmjs.com/package/@googledrive/index which was written by someone else, credits are given on Source Page.
-// v2.0.21
+// v2.0.22
 // Initialize the page
 function init() {
     document.siteName = $('title').html();
@@ -801,7 +801,7 @@ function file_others(path) {
 	<div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/'+ obj.id +'/view" id ="file_drive_link" target="_blank">GD Link</a>': ''}
   <div class="btn-group text-center">
-    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={KEYWORD}" type="button" class="btn btn-primary">Get Link</a>
+    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={${obj.name}}" type="button" class="btn btn-primary">Get Link</a>
   </div>
   <div class="btn-group text-center">
       <a href="${url}" type="button" class="btn btn-primary">Download</a>
