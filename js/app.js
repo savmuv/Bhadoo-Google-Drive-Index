@@ -801,7 +801,7 @@ function file_others(path) {
 	<div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/'+ obj.id +'/view" id ="file_drive_link" target="_blank">GD Link</a>': ''}
   <div class="btn-group text-center">
-    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={${obj.name}}" type="button" class="btn btn-primary">Get Link</a>
+    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={KEYWORD}" type="button" class="btn btn-primary">Get Link</a>
   </div>
   <div class="btn-group text-center">
       <a href="${url}" type="button" class="btn btn-primary">Download</a>
@@ -863,6 +863,9 @@ function file_code(path) {
 </div>
 	<div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/'+ obj.id +'/view" id ="file_drive_link" target="_blank">GD Link</a>': ''}
+  <div class="btn-group text-center">
+    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={KEYWORD}" type="button" class="btn btn-primary">Get Link</a>
+  </div>
   <div class="btn-group text-center">
       <a href="${url}" type="button" class="btn btn-primary">Download</a>
       <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -945,6 +948,9 @@ ${UI.disable_video_download ? `` : `
 </div>
 ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/'+ obj.id +'/view" id ="file_drive_link" target="_blank">GD Link</a>': ''}
 <div class="btn-group text-center">
+    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={KEYWORD}" type="button" class="btn btn-primary">Get Link</a>
+  </div>
+<div class="btn-group text-center">
     <a href="${url}" type="button" class="btn btn-primary">Download</a>
     <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="sr-only"></span>
@@ -1009,6 +1015,9 @@ function file_audio(path) {
 </div>
 	<div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/'+ obj.id +'/view" id ="file_drive_link" target="_blank">GD Link</a>': ''}
+  <div class="btn-group text-center">
+    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={KEYWORD}" type="button" class="btn btn-primary">Get Link</a>
+  </div>
   <div class="btn-group text-center">
       <a href="${url}" type="button" class="btn btn-primary">Download</a>
       <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1124,6 +1133,9 @@ function file_pdf(path) {
 	<div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/'+ obj.id +'/view" id ="file_drive_link" target="_blank">GD Link</a>': ''}
   <div class="btn-group text-center">
+    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={KEYWORD}" type="button" class="btn btn-primary">Get Link</a>
+  </div>
+  <div class="btn-group text-center">
       <a href="${url}" type="button" class="btn btn-primary">Download</a>
       <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only"></span>
@@ -1217,6 +1229,9 @@ function file_image(path) {
 </div>
 	<div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/'+ obj.id +'/view" id ="file_drive_link" target="_blank">GD Link</a>': ''}
+  <div class="btn-group text-center">
+    <a href="https://r3adyt0download.com/dwr8Zfe5aa0fd926c8f8723f4ccfb867a4161c299fe37?q={KEYWORD}" type="button" class="btn btn-primary">Get Link</a>
+  </div>
   <div class="btn-group text-center">
       <a href="${url}" type="button" class="btn btn-primary">Download</a>
       <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
